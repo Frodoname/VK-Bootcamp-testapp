@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableCell" rowHeight="63" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="VK_Problem" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleAspectFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oqW-2g-5Lh">
+                        <rect key="frame" x="10" y="10" width="300" height="50"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bbV-sf-ifi">
+                                <rect key="frame" x="0.0" y="0.0" width="45" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="LfT-Ow-OXV"/>
+                                    <constraint firstAttribute="width" constant="45" id="ipi-mk-vRG"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="DZ0-eU-oLO">
+                                <rect key="frame" x="65" y="4.5" width="169.5" height="41"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGs-dJ-Ltz">
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Самая популярная соцсеть" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TW-Vw-pXO">
+                                        <rect key="frame" x="0.0" y="20.5" width="112" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwT-OL-3V4">
+                                <rect key="frame" x="254.5" y="9.5" width="45.5" height="31"/>
+                                <color key="tintColor" red="0.61826360199999997" green="0.61717183119999997" blue="0.68646158170000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.forward" catalog="system"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="oqW-2g-5Lh" secondAttribute="bottom" constant="10" id="9Zn-Zg-gRH"/>
+                    <constraint firstAttribute="trailing" secondItem="oqW-2g-5Lh" secondAttribute="trailing" constant="10" id="LVh-oF-UL7"/>
+                    <constraint firstItem="oqW-2g-5Lh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="o0J-9f-cuX"/>
+                    <constraint firstItem="oqW-2g-5Lh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="uJR-4P-HvR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionServiceLabel" destination="5TW-Vw-pXO" id="CN5-pT-xlp"/>
+                <outlet property="nameServiceLabel" destination="AGs-dJ-Ltz" id="sEq-Rp-oFc"/>
+                <outlet property="serviceImage" destination="bbV-sf-ifi" id="kfL-d3-DTD"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="63.950892857142854"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
+    </resources>
+</document>
