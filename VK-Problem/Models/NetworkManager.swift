@@ -16,7 +16,7 @@ protocol NetworkDelegate {
 struct NetworkManager {
     
     var delegate: NetworkDelegate?
-    
+
     let urlString = "https://publicstorage.hb.bizmrg.com/sirius/result.json"
     
     func fetchData() {

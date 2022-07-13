@@ -17,7 +17,6 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.register(UINib.init(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
-        
         self.tableView.separatorColor = .gray
         
         networkManager.delegate = self
@@ -29,7 +28,6 @@ class TableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return  arrayOfServices.count
     }
     
@@ -60,7 +58,6 @@ class TableViewController: UITableViewController {
                 }
             }
         }
-
         
     }
     
@@ -82,6 +79,6 @@ extension TableViewController: NetworkDelegate {
         print(with.localizedDescription)
     }
     
-    
 }
+
 
