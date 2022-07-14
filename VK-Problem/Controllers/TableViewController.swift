@@ -45,16 +45,19 @@ class TableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if let url = URL(string: arrayOfServices[indexPath.row].linkToService) {
-            let greeting = url.host
-            let resultFormat = greeting!.prefix(while: { $0 != "." })
             
-            guard let url = URL(string: "\(resultFormat)://") else {return}
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                if let url = URL(string: arrayOfServices[indexPath.row].linkToService) {
-                    let vc = SFSafariViewController(url: url)
-                    present(vc, animated: true)
+            if let urlHost = url.host {
+                let resultFormat = formatForScheme(with: urlHost)
+                
+                guard let urlForScheme = URL(string: "\(resultFormat)://") else {return}
+                if UIApplication.shared.canOpenURL(urlForScheme) {
+                    UIApplication.shared.open(urlForScheme, options: [:], completionHandler: nil)
+                } else {
+                    if let url = URL(string: arrayOfServices[indexPath.row].linkToService) {
+                        let vc = SFSafariViewController(url: url)
+                        present(vc, animated: true)
+                    }
+                    
                 }
             }
         }
@@ -79,6 +82,19 @@ extension TableViewController: NetworkDelegate {
         print(with.localizedDescription)
     }
     
+}
+
+//MARK: - Format Web-adress for scheme
+
+extension TableViewController {
+    
+    func formatForScheme(with url: String) -> String {
+        var removeLastPoint = url.components(separatedBy: ".")
+        removeLastPoint.removeLast()
+        
+        return removeLastPoint.joined(separator: ".")
+        
+    }
 }
 
 
